@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 class Task(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.CharField(max_length=250)
+    checked = models.BooleanField(default=False)
     taskTitle = models.CharField(max_length=250)
     deadline = models.DateField()
     creation_date = models.DateField(auto_now_add=True)
