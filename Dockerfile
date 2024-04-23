@@ -9,9 +9,10 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /app
 
 # Copy the requirements file into the Docker image
-COPY requirements.txt .
+COPY requirements.txt /app
 
 # Install dependencies
+RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the Django project into the Docker image
